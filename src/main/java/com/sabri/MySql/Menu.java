@@ -25,7 +25,6 @@ public class Menu extends javax.swing.JFrame {
      */
     private Connection co;
     private String urlBD = "jdbc:mysql://localhost:3306/Ejemplo1";
-
     public Menu() {
         initComponents();
         this.setTitle("Algo");
