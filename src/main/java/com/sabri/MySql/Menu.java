@@ -24,11 +24,12 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     private Connection co;
-    private String urlBD = "jdbc:mysql://localhost:3306/Ejemplo1";
+    private final String urlBD = "jdbc:mysql://localhost:3306/Ejemplo1";
+
     public Menu() {
         initComponents();
-        this.setTitle("Algo");
-        this.setLocationRelativeTo(null);
+        super.setTitle("Algo");
+        super.setLocationRelativeTo(null);
     }
 
     /**
