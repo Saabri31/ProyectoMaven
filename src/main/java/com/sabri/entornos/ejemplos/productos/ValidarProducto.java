@@ -8,11 +8,14 @@ package com.sabri.entornos.ejemplos.productos;
  *
  * @author todbolsa
  */
-public class TareaEnvioCorreo implements TareaProducto {
+public class ValidarProducto implements TareaProducto {
 
     @Override
     public void ejecutar(Producto producto) {
-        System.out.println(producto.getNombre() + " enviado por correo");
+        if (producto.getPrecio() < 100) {
+            System.out.println("Producto valido");
+        } else {
+            System.out.println("Producto invalido");
+        }
     }
-
 }

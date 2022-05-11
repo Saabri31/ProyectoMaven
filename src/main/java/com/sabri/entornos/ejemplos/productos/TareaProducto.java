@@ -9,7 +9,6 @@ package com.sabri.entornos.ejemplos.productos;
  * @author todbolsa
  */
 public interface TareaProducto {
+
     public abstract void ejecutar(Producto producto);
-    
-    
 }

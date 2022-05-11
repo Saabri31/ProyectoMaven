@@ -4,8 +4,6 @@
  */
 package com.sabri.entornos.ejercicios.Ejercicio3;
 
-import com.sabri.entornos.ejemplos.impresoras.*;
-
 /**
  *
  * @author todbolsa
@@ -17,11 +15,11 @@ public abstract class Impresora {
     public Impresora() {
         this("");
     }
-    
+
     public Impresora(String texto) {
         this.texto = texto;
     }
-    
+
     public String getTexto() {
         return texto;
     }

@@ -4,8 +4,6 @@
  */
 package com.sabri.entornos.ejercicios.Ejercicio3;
 
-import com.sabri.entornos.ejemplos.impresoras.*;
-
 /**
  *
  * @author todbolsa
