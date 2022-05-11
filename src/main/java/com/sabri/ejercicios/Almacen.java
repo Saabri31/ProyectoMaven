@@ -4,11 +4,7 @@
  */
 package com.sabri.ejercicios;
 
-import java.beans.PropertyEditorManager;
 import java.sql.Connection;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
-import javax.swing.JTextArea;
 
 /**
  *
