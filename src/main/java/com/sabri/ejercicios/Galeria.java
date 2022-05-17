@@ -5,12 +5,9 @@
 package com.sabri.ejercicios;
 
 import java.net.URL;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
