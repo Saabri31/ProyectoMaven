@@ -7,7 +7,6 @@ package com.sabri.ejercicios;
 import java.awt.Cursor;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JTextField;
 
 /**
  *
