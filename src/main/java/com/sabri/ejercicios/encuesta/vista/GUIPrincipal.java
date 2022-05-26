@@ -6,7 +6,9 @@ package com.sabri.ejercicios.encuesta.vista;
 
 import com.sabri.ejercicios.encuesta.controlador.Controlador;
 import java.awt.Dimension;
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JRadioButton;
 
 /**
  *
@@ -18,13 +20,13 @@ public class GUIPrincipal extends javax.swing.JFrame {
      * Creates new form Encuesta
      */
     private Controlador controlador;
-    
+
     public GUIPrincipal() {
         initComponents();
         setFrame();
         setControlador();
     }
-    
+
     public void setFrame() {
         this.jLabel1.setText("¿Crees que vas a aprobar programación?");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -35,11 +37,11 @@ public class GUIPrincipal extends javax.swing.JFrame {
         this.jButton1.setActionCommand("Votar");
         this.jButton2.setText("Cancelar");
         this.jButton2.setActionCommand("Cancelar");
-        
+
         this.buttonGroup1.add(jRadioButton1);
         this.buttonGroup1.add(jRadioButton2);
         this.buttonGroup1.add(jRadioButton3);
-        
+
         this.jPanel1.setPreferredSize(new Dimension(0, 100));
         this.jPanel3.setPreferredSize(new Dimension(0, 300));
         this.jPanel2.setPreferredSize(new Dimension(0, 100));
@@ -49,11 +51,27 @@ public class GUIPrincipal extends javax.swing.JFrame {
         this.setMinimumSize(new Dimension(500, 500));
         this.pack();
     }
-    
+
     public void setControlador() {
         controlador = new Controlador(this);
         this.jButton1.addActionListener(controlador);
         this.jButton2.addActionListener(controlador);
+    }
+
+    public ButtonGroup getButtonGroup1() {
+        return buttonGroup1;
+    }
+
+    public JRadioButton getjRadioButton1() {
+        return jRadioButton1;
+    }
+
+    public JRadioButton getjRadioButton2() {
+        return jRadioButton2;
+    }
+
+    public JRadioButton getjRadioButton3() {
+        return jRadioButton3;
     }
 
     /**
