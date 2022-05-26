@@ -37,6 +37,8 @@ public class GUIPrincipal extends javax.swing.JFrame {
         this.jButton1.setActionCommand("Votar");
         this.jButton2.setText("Cancelar");
         this.jButton2.setActionCommand("Cancelar");
+        this.jButton3.setText("Mostrar todo");
+        this.jButton3.setActionCommand("Mostrar");
 
         this.buttonGroup1.add(jRadioButton1);
         this.buttonGroup1.add(jRadioButton2);
@@ -56,6 +58,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         controlador = new Controlador(this);
         this.jButton1.addActionListener(controlador);
         this.jButton2.addActionListener(controlador);
+        this.jButton3.addActionListener(controlador);
     }
 
     public ButtonGroup getButtonGroup1() {
@@ -89,6 +92,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -110,6 +114,9 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
         jButton2.setText("jButton2");
         jPanel2.add(jButton2);
+
+        jButton3.setText("jButton3");
+        jPanel2.add(jButton3);
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_END);
 
@@ -174,6 +181,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

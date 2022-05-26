@@ -41,7 +41,7 @@ public class EncuestaDAO {
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error de BD", "Encuesta DAM", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error de BD", "Update", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
         return resultado;
@@ -59,7 +59,7 @@ public class EncuestaDAO {
             rs.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error de BD", "Encuesta DAM", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error de BD", "Select", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
         return encuesta;
@@ -82,22 +82,27 @@ public class EncuestaDAO {
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error de BD", "Encuesta DAM", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error de BD", "Insert", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
         return resultado;
     }
 
-    public void mostrarTodos() {
+    public String mostrarTodos() {
+        Encuesta encuesta = null;
         try (Connection con = ConexionBD.conectarBD()) {
-            String sqlMostrar = "";
-            sqlMostrar = "SELECT * FROM encuesta";
-            PreparedStatement ps = con.prepareCall(sqlMostrar);
-            ps.close();
+            String sqlSelect = "SELECT * FROM encuesta";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sqlSelect);
+            if (rs.next()) {
+                encuesta = new Encuesta(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4));
+            }
+            rs.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error de BD", "Encuesta DAM", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error de BD", "Select", JOptionPane.ERROR_MESSAGE); 
             ex.printStackTrace();
         }
+        return encuesta.toString(); 
     }
 }
