@@ -89,20 +89,24 @@ public class EncuestaDAO {
     }
 
     public String mostrarTodos() {
+        System.out.println("Hola?");
         Encuesta encuesta = null;
         try (Connection con = ConexionBD.conectarBD()) {
             String sqlSelect = "SELECT * FROM encuesta";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sqlSelect);
+            
             if (rs.next()) {
                 encuesta = new Encuesta(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4));
             }
             rs.close();
+            
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error de BD", "Select", JOptionPane.ERROR_MESSAGE); 
+            JOptionPane.showMessageDialog(null, "Error de BD", "Select", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
-        return encuesta.toString(); 
+        
+        return encuesta.toString();
     }
 }

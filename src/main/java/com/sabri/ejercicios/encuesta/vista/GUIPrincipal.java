@@ -37,7 +37,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         this.jButton1.setActionCommand("Votar");
         this.jButton2.setText("Cancelar");
         this.jButton2.setActionCommand("Cancelar");
-        this.jButton3.setText("Mostrar todo");
+        this.jButton3.setText("Mostrar");
         this.jButton3.setActionCommand("Mostrar");
 
         this.buttonGroup1.add(jRadioButton1);

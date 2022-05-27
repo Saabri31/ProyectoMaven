@@ -47,14 +47,14 @@ public class Controlador implements ActionListener {
                     respuesta = encuestaDAO.insertRespuesta(si, no, ns);
                 }
                 if (respuesta > 0) {
-                    JOptionPane.showInternalMessageDialog(null, "Exito", "Exito", respuesta);
+                    JOptionPane.showMessageDialog(null, "Exito", "Exito", respuesta);
                 }
             }
         } else if (e.getActionCommand().equals("Cancelar")) {
             //Cierre de ventana
             vistaPrincipal.dispose();
         } else if (e.getActionCommand().equals("Mostrar")) {
-            JOptionPane.showMessageDialog(null, encuestaDAO.mostrarTodos(), "Resultados de la encuesta", JOptionPane.INFORMATION_MESSAGE);
+            encuestaDAO.mostrarTodos();
         }
     }
 
