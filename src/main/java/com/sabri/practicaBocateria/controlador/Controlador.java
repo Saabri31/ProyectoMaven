@@ -4,10 +4,24 @@
  */
 package com.sabri.practicaBocateria.controlador;
 
+import com.sabri.practicaBocateria.vista.GUIPrincipal;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author todbolsa
  */
-public class Controlador {
-    
+public class Controlador implements ActionListener {
+
+    private GUIPrincipal vistaPrincipal;
+
+    public Controlador(GUIPrincipal vista) {
+        this.vistaPrincipal = vista;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        
+    }
 }
