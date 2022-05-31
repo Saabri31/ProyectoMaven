@@ -2,12 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.sabri.practicaBocateria.vista;
-
-import com.sabri.practicaBocateria.modelo.entidades.Producto;
-import java.awt.Dimension;
-import java.util.ArrayList;
-import javax.swing.JButton;
+package com.sabri.practicaBocateriaDaniel.vista;
 
 /**
  *
@@ -15,14 +10,11 @@ import javax.swing.JButton;
  */
 public class GUIPrincipal extends javax.swing.JFrame {
 
-    private static ArrayList<Producto> prod = new ArrayList<>();
-
     /**
      * Creates new form GUIPrincipal
      */
     public GUIPrincipal() {
         initComponents();
-        prueba();
     }
 
     /**
@@ -213,34 +205,6 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void prueba() {
-        Producto p1 = new Producto(1, "uno", 25);
-        Producto p2 = new Producto(2, "dos", 25);
-        Producto p3 = new Producto(3, "tres", 25);
-        Producto p4 = new Producto(4, "cuatro", 25);
-        Producto p5 = new Producto(5, "cinco", 25);
-        prod.add(p1);
-        prod.add(p2);
-        prod.add(p3);
-        prod.add(p4);
-        prod.add(p5);
-        while (!prod.isEmpty()) {
-            JButton button = new JButton();
-            button.setVisible(true);
-            int x = 0;
-            int y = 0;
-            button.setSize(new Dimension(100, 100));
-            for (int i = 0; i < prod.size(); i++) {
-                button.setLocation(x, y);
-                x += 50;
-                button.setText(prod.get(i).getNombre());
-                jPanel8.add(button);
-                prod.remove(i);
-
-            }
-        }
-    }
 
     /**
      * @param args the command line arguments

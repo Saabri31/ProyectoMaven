@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.sabri.practicaBocateria.modelo.entidades;
+package com.sabri.practicaBocateriaDaniel.modelo.entidades;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -13,15 +15,24 @@ import java.sql.Timestamp;
 public class Ticket {
 
     private int id;
-    private Timestamp fechaHora;
+    private LocalDateTime fechaHora;
     private String empleado;
     private double total;
+    private HashMap<String,Integer> productos = new HashMap<String,Integer>();
 
-    public Ticket(int id, Timestamp fechaHora, String empleado, double total) {
+    public Ticket(int id, LocalDateTime fechaHora, String empleado, double total, HashMap<String,Integer> productos) {
         this.id = id;
         this.fechaHora = fechaHora;
         this.empleado = empleado;
         this.total = total;
+    }
+
+    public HashMap<String,Integer> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(HashMap<String,Integer> productos) {
+        this.productos = productos;
     }
 
     public int getId() {
@@ -32,11 +43,11 @@ public class Ticket {
         this.id = id;
     }
 
-    public Timestamp getFechaHora() {
+    public LocalDateTime getFechaHora() {
         return fechaHora;
     }
 
-    public void setFechaHora(Timestamp fechaHora) {
+    public void setFechaHora(LocalDateTime fechaHora) {
         this.fechaHora = fechaHora;
     }
 
@@ -58,7 +69,9 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" + "id=" + id + ", fechaHora=" + fechaHora + ", empleado=" + empleado + ", total=" + total + '}';
+        return "Ticket{" + "id=" + id + ", fechaHora=" + fechaHora + ", empleado=" + empleado + ", total=" + total + ", productos=" + productos + '}';
     }
+
+   
 
 }
