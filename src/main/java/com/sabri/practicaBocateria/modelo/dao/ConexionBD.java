@@ -25,6 +25,10 @@ public class ConexionBD {
     public static String passwd = "";
     public static String url = "jdbc:mysql://" + host + ":" + puerto + "/" + database;
 
+    public static String getUrl() {
+        return url;
+    }
+    
     public static Connection con;
 
     public static Connection conectarBD() {
