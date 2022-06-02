@@ -19,6 +19,7 @@ public class Ticket {
     private String empleado;
     private double total;
     private HashMap<String,Integer> productos = new HashMap<String,Integer>();
+   
 
     public Ticket(int id, LocalDateTime fechaHora, String empleado, double total, HashMap<String,Integer> productos) {
         this.id = id;

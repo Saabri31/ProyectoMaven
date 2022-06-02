@@ -49,7 +49,7 @@ public class VentaDAO {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sqlSelect);
             if (rs.next()) {
-                venta = new Venta(rs.getInt(1), rs.getTimestamp(2), rs.getString(3), (HashMap<String, Integer>) rs.getObject(4), rs.getInt(5));
+                venta = new (rs.getInt(1), rs.getDate(2), rs.getString(3), rs.get(4), rs.getInt(5));
             }
             rs.close();
 
@@ -57,8 +57,29 @@ public class VentaDAO {
             JOptionPane.showMessageDialog(null, "Error de BD", "Select", JOptionPane.ERROR_MESSAGE);
             ex.printStackTrace();
         }
-//        return encuesta;
-        return null;
+        venta.imprimirTicket();
+        return venta;
+    }
+
+    public String mostrarVentasAcumuladasMes() {
+        System.out.println("Hola?");
+        Venta venta = null;
+        try (Connection con = ConexionBD.conectarBD()) {
+            String sqlSelect = "SELECT * FROM encuesta";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sqlSelect);
+
+            if (rs.next()) {
+                venta = new Venta(rs.getInt(1), rs.getDate(2), rs.getString(3), rs.get(4), rs.getInt(5));
+            }
+            rs.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error de BD", "Select", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
+
+        return venta.toString();
     }
 
 }

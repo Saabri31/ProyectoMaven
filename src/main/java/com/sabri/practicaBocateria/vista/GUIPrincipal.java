@@ -33,7 +33,6 @@ public class GUIPrincipal extends javax.swing.JFrame {
      */
     public GUIPrincipal() {
         initComponents();
-        cargarTablas();
         setFrame();
     }
 
@@ -71,6 +70,10 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -239,7 +242,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addGap(0, 38, Short.MAX_VALUE)
+                .addGap(0, 40, Short.MAX_VALUE)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -263,7 +266,7 @@ public class GUIPrincipal extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(306, 306, 306)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -273,16 +276,46 @@ public class GUIPrincipal extends javax.swing.JFrame {
 
         jPanel2.add(jPanel6, java.awt.BorderLayout.PAGE_END);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 384, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton4.setText("jButton4");
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setMaximumSize(new java.awt.Dimension(133, 116));
+        jButton4.setMinimumSize(new java.awt.Dimension(133, 116));
+        jButton4.setPreferredSize(new java.awt.Dimension(133, 116));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+
+        jButton5.setText("jButton5");
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setMaximumSize(new java.awt.Dimension(133, 116));
+        jButton5.setMinimumSize(new java.awt.Dimension(133, 116));
+        jButton5.setPreferredSize(new java.awt.Dimension(133, 116));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, -1, -1));
+
+        jButton7.setText("jButton7");
+        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton7.setMaximumSize(new java.awt.Dimension(133, 116));
+        jButton7.setMinimumSize(new java.awt.Dimension(133, 116));
+        jButton7.setPreferredSize(new java.awt.Dimension(133, 116));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        jPanel7.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, -1, -1));
+
+        jLabel4.setText("jLabel4");
+        jPanel7.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
 
         jPanel2.add(jPanel7, java.awt.BorderLayout.PAGE_START);
 
@@ -290,11 +323,11 @@ public class GUIPrincipal extends javax.swing.JFrame {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 384, Short.MAX_VALUE)
+            .addGap(0, 485, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
+            .addGap(0, 398, Short.MAX_VALUE)
         );
 
         jPanel2.add(jPanel8, java.awt.BorderLayout.CENTER);
@@ -320,82 +353,59 @@ public class GUIPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
-    public void setFrame() {
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void setFrame() {
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(500);
+                        jLabel3.setText(formatearFechaHora());
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        Thread hilo = new Thread(runnable);
+        hilo.start();
+
         this.jLabel1.setText("Productos seleccionados");
         this.jLabel2.setText("Total: " + 5 + "€");
-        this.jLabel3.setText(formatearFechaHora(LocalDateTime.now()));
+        this.jLabel4.setText("Productos");
         this.jLabel5.setText("Método de pago: ");
         this.jLabel6.setText("Empleado: ");
         this.jButton1.setText("Cancelar");
         this.jButton2.setText("Facturar");
+        this.jButton4.setText("Bebidas");
+        this.jButton5.setText("Bocadillos");
+        this.jButton7.setText("Otros");
         this.jRadioButton1.setText("Efectivo");
         this.jRadioButton2.setText("Tarjeta");
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {""}));
-        this.setPreferredSize(new Dimension(900, 600));
-        this.setMinimumSize(new Dimension(900, 600));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{""}));
+        this.setPreferredSize(new Dimension(850, 600));
+        this.setMinimumSize(new Dimension(850, 600));
+        this.setMaximumSize(new Dimension(850, 600));
+        this.setResizable(false);
         this.pack();
     }
 
-    public static String formatearFechaHora(LocalDateTime fechaHora) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMM-yyyy HH:mm");
-        String formatDateTime = fechaHora.format(formatter);
-        return formatDateTime;
-    }
-
-    private void prueba() {
-        Producto p1 = new Producto(1, "uno", 25);
-        Producto p2 = new Producto(2, "dos", 25);
-        Producto p3 = new Producto(3, "tres", 25);
-        Producto p4 = new Producto(4, "cuatro", 25);
-        Producto p5 = new Producto(5, "cinco", 25);
-        prod.add(p1);
-        prod.add(p2);
-        prod.add(p3);
-        prod.add(p4);
-        prod.add(p5);
-        while (!prod.isEmpty()) {
-            JButton button = new JButton();
-            button.setVisible(true);
-            int x = 0;
-            int y = 0;
-            button.setSize(new Dimension(100, 100));
-            for (int i = 0; i < prod.size(); i++) {
-                button.setLocation(x, y);
-                x += 50;
-                button.setText(prod.get(i).getNombre());
-                jPanel8.add(button);
-                prod.remove(i);
-
-            }
-        }
-    }
-
-    private void cargarTablas() {
-        try {
-            ConexionBD conexBD = new ConexionBD();
-            con = DriverManager.getConnection(conexBD.getUrl(), "root", "");
-
-            DatabaseMetaData meta = con.getMetaData();
-            ResultSet rs = meta.getTables(conexBD.getUrl(), null, null, null);
-            while (rs.next()) {
-                //System.out.println(rs.getString(3));
-                MiBoton boton = new MiBoton("a");
-                boton.setSize(new Dimension(100, 100));
-                this.jPanel7.add(boton);
-                boton.setVisible(true);
-            }
-            this.jPanel7.updateUI();
-            rs.close();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(GUIPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                con.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(GUIPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+    public static String formatearFechaHora() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        return LocalDateTime.now().format(formatter);
     }
 
     /**
@@ -437,11 +447,15 @@ public class GUIPrincipal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;

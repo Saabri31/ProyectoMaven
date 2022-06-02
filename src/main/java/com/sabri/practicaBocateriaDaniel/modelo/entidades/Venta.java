@@ -5,9 +5,7 @@
  */
 package com.sabri.practicaBocateriaDaniel.modelo.entidades;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -15,20 +13,20 @@ import java.util.HashMap;
  * @author danip
  */
 public class Venta {
-
     private int id;
-    private Timestamp fechaHora;
+    private LocalDateTime fechaHora;
     private String empleado;
     private double total;
-    private HashMap<String, Integer> productos = new HashMap<String, Integer>();
+    private HashMap<String,Integer> productos = new HashMap<String,Integer>();
+   
 
-    public Venta(int id, Timestamp fechaHora, String empleado, HashMap<String, Integer> productos, double total) {
+    public Venta(int id,LocalDateTime fechaHora, String empleado, HashMap<String, Integer> productos,double total) {
         this.id = id;
         this.fechaHora = fechaHora;
         this.empleado = empleado;
         this.total = total;
-        this.productos = productos;
-
+        this.productos=productos;
+                
     }
 
     public HashMap<String, Integer> getProductos() {
@@ -47,11 +45,11 @@ public class Venta {
         this.id = id;
     }
 
-    public Timestamp getFechaHora() {
+    public LocalDateTime getFechaHora() {
         return fechaHora;
     }
 
-    public void setFechaHora(Timestamp fechaHora) {
+    public void setFechaHora(LocalDateTime fechaHora) {
         this.fechaHora = fechaHora;
     }
 
@@ -70,18 +68,27 @@ public class Venta {
     public void setTotal(double total) {
         this.total = total;
     }
-
-    public void addProducto(Producto producto) {
-
-        if (this.productos.containsKey(producto.getNombre()) == true) {
-            int cantidad = productos.get(producto.getNombre()) + 1;
-            this.productos.replace(producto.getNombre(), cantidad);
-
-        } else {
-            this.productos.put(producto.getNombre(), 1);
-
+    
+     public  void addProducto(Producto producto){
+        
+        if(this.productos.containsKey(producto.getNombre())==true){
+            int cantidad=productos.get(producto.getNombre())+1;
+            this.productos.replace(producto.getNombre(),cantidad);
+            
         }
-
+        else{
+            this.productos.put(producto.getNombre(),1);
+            
+        }
+        
+        
+        
+        
     }
 
+    public void imprimirTicket() {
+        Ticket ticket = new Ticket(this.id,this.fechaHora,this.empleado,this.total,this.productos);
+        ticket.toString();
+    }
+    
 }
