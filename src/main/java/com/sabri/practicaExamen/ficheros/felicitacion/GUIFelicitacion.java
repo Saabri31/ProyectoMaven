@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sabri.practicaExamen.felicitacion;
+package com.sabri.practicaExamen.ficheros.felicitacion;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

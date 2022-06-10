@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.sabri.practicaExamen.employeescsv;
+package com.sabri.practicaExamen.ficheros.employeescsv;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;

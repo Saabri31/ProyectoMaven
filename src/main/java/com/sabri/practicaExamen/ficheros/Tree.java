@@ -2,36 +2,39 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.sabri.practicaExamen;
+package com.sabri.practicaExamen.ficheros;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
 /**
  *
  * @author Sabri
  */
-public class Dir {
+public class Tree {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String ruta = "";
         File file;
         ruta = sc.nextLine();
         file = new File(ruta);
         if (file.isDirectory()) {
-            File[] lista = file.listFiles();
-            dir(lista);
+            tree(file);
         } else {
-            System.out.println("No es una ruta válida");
+            System.out.println("Debes seleccionar un directorio");
         }
     }
 
-    public static void dir(File... files) {
+    public static void tree(File file) {
+        File[] files = file.listFiles();
         for (int i = 0; i < files.length; i++) {
-            System.out.print(files[i].getName() + " ");
+            if (files[i].isDirectory()) {
+                System.out.println(files[i].getName());
+                tree(files[i]);
+            } else {
+                System.out.println("---" + files[i].getName());
+            }
         }
     }
-
 }
