@@ -124,7 +124,7 @@ public class Ventana extends javax.swing.JFrame {
         
         String opcion = (String) desplegableTipo.getSelectedItem().toString();
         int index = desplegableTipo.getSelectedIndex();
-        System.out.println(opcion);
+//        System.out.println(opcion);
         System.out.println(index);
         if (index!=0) {
             modelo.clear();
