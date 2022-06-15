@@ -6,11 +6,13 @@ package com.sabri.practicaExamen;
 
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 
 /**
  *
@@ -29,48 +31,51 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     public void setFrame() {
-        super.setPreferredSize(new Dimension(300, 50));
+        super.setPreferredSize(new Dimension(300, 10));
         super.setLocationRelativeTo(null);
         jPanel1.setLayout(new GridLayout());
         jPanel1.setPreferredSize(new Dimension(300, 30));
         buttonGeneration();
-        addPasswordField();
-        addViewButton();
-    }
-
-    public void addPasswordField() {
-        JPasswordField passwordField = new JPasswordField();
-        passwordField.setPreferredSize(new Dimension(200, 30));
-        passwordField.setVisible(true);
-        super.add(passwordField);
-    }
-
-    public void addViewButton() {
-        JButton button = new JButton();
-        button.setPreferredSize(new Dimension(30, 30));
-        button.setText("");
-        button.setVisible(true);
-        super.add(button);
     }
 
     public void buttonGeneration() {
         for (int i = 0; i < 10; i++) {
             JButton button = new JButton();
             button.setPreferredSize(new Dimension(30, 30));
-            button.setText(String.valueOf(randomNumbers(i)));
+            button.setText(randomNumbers().get(i).toString());
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (String.valueOf(passwordField.getPassword()).length() == 4) {
+                        for (int j = 0; j < buttons.size(); j++) {
+                            buttons.get(j).setEnabled(false);
+                        }
+                    } else {
+                        String textoPassword = String.valueOf(passwordField.getPassword());
+                        textoPassword += button.getText();
+                        passwordField.setText(textoPassword);
+                    }
+                }
+            });
             buttons.add(button);
             jPanel1.add(button);
             button.setVisible(true);
         }
     }
 
-    public int randomNumbers(int num) {
-        ArrayList<Integer> numbers = new ArrayList<>();
+    public ArrayList<Integer> randomNumbers() {
+        ArrayList<Integer> numeros = new ArrayList<>();
+        ArrayList<Integer> randomNumbers = new ArrayList<>();
         Random rnd = new Random();
         for (int i = 0; i < 10; i++) {
-            numbers.add(rnd.nextInt(10));
+            numeros.add(i);
         }
-        return numbers.get(num);
+        while (!numeros.isEmpty()) {
+            int num = rnd.nextInt(numeros.size());
+            randomNumbers.add(numeros.get(num));
+            numeros.remove(num);
+        }
+        return randomNumbers;
     }
 
     /**
@@ -82,7 +87,13 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jEditorPane1 = new javax.swing.JEditorPane();
         jPanel1 = new javax.swing.JPanel();
+        passwordField = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
+
+        jScrollPane1.setViewportView(jEditorPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,28 +101,53 @@ public class NewJFrame extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 405, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 81, Short.MAX_VALUE)
         );
 
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 219, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        passwordField.setEchoChar((char) 0);
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        passwordField.setEchoChar('*');
+    }//GEN-LAST:event_jButton1MouseExited
 
     /**
      * @param args the command line arguments
@@ -149,6 +185,10 @@ public class NewJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPasswordField passwordField;
     // End of variables declaration//GEN-END:variables
 }
